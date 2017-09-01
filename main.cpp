@@ -32,7 +32,6 @@ int main(){
 				}else if (num[0] == '0' && (num[1] == 'c' || num[1] == 'C')){
 					Octal* b = new Octal(num);
 					if (b->Validacion(b->getNumero()) == false){
-						cout<<"entro"<<endl;
 						numeros.push_back(*b);
 					}else{
 						cout<<"Numero No es Octal"<<endl;
@@ -61,7 +60,7 @@ int main(){
 							cout<<"Ingrese Numero 2: ";
 							cin>>pos2;
 							cout<<typeid(numeros.at(pos1)).name()<<endl;
-							if (typeid(numeros.at(pos1)).name() == "Numero"){
+							if (typeid(numeros.at(pos1)).name() == "Binario"){
 								cout<<"Es Binario"<<endl;
 							}
 						}
