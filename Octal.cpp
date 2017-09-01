@@ -26,19 +26,14 @@ bool Octal::Validacion(string numero){
 }
 
 int Octal::Convertir(string numero){
-	int result;
-	cout<<"sal:"<<numero<<endl;
-	for (int i=0; i<numero.length(); i++) {
-        if (numero[i]>=48 && numero[i]<=57)
-        {
-            result += (numero[i]-48)*pow(16,numero.length()-i-1);
-        } else if (numero[i]>=65 && numero[i]<=70) {
-            result += (numero[i]-55)*pow(16,numero.length( )-i-1);
-        } else if (numero[i]>=97 && numero[i]<=102) {
-            result += (numero[i]-87)*pow(16,numero.length()-i-1);
-        }
+	int numeroretornado = 0, i = 0, rem;
+    while (numero != 0){
+        rem = numero % 10;
+        numero /= 10;
+        numeroretornado += rem * pow(8, i);
+        ++i;
     }
-    return result;
+    return numeroretornado;
 }
 
 Octal::~Octal(){

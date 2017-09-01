@@ -32,12 +32,11 @@ int main(){
 				}else if (num[0] == '0' && (num[1] == 'c' || num[1] == 'C')){
 					Octal* b = new Octal(num);
 					if (b->Validacion(b->getNumero()) == false){
+						cout<<"entro"<<endl;
 						numeros.push_back(*b);
 					}else{
 						cout<<"Numero No es Octal"<<endl;
 					}
-					//Octal numero(num);
-					//numeros.push_back(numero);
 				}else if (num[0] == '0' && (num[1] == 'x' || num[1] == 'X')){
 					Hexadecimal* b = new Hexadecimal(num);
 					if (b->Validacion(b->getNumero()) == false){
