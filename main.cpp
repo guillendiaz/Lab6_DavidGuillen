@@ -16,6 +16,7 @@ int MenuO();
 //Se ingresa al MenuO()
 string toBinary(int);
 string toOctal(int);
+string toHex(int);
 int main(){
 	int opcion;
 	vector<Numero*> numeros;
@@ -90,10 +91,10 @@ int main(){
 							result = num1 + num2;
 							cout<<"Suma: "<<num1 <<" + " <<num2 << " = " <<result<<endl;
 							cout<<"Resultado: "<<endl
-								<<"Hexadecimal "<<hex<<result<<endl
+								<<"Hexadecimal "<<toHex(result)<<endl
 								<<"Binario "<<toBinary(result)<<endl
 								<<"Octal "<<toOctal(result)<<endl
-								<<"Decimal"<<result<<endl;
+								<<"Decimal "<<result<<endl;
 						}
 							break;
 
@@ -127,10 +128,10 @@ int main(){
 							result = num1 - num2;
 							cout<<"Resta: "<<num1 <<" - " <<num2 << " = " <<result<<endl;
 							cout<<"Resultado: "<<endl
-								<<"Hexadecimal "<<hex<<result<<endl
+								<<"Hexadecimal "<<toHex(result)<<endl
 								<<"Binario "<<toBinary(result)<<endl
 								<<"Octal "<<toOctal(result)<<endl
-								<<"Decimal"<<result<<endl;
+								<<"Decimal "<<result<<endl;
 						}
 							break;
 
@@ -164,10 +165,10 @@ int main(){
 							result = num1 * num2;
 							cout<<"Multiplicacion: "<<num1 <<" * " <<num2 << " = " <<result<<endl;
 							cout<<"Resultado: "<<endl
-								<<"Hexadecimal "<<hex<<result<<endl
+								<<"Hexadecimal "<<toHex(result)<<endl
 								<<"Binario "<<toBinary(result)<<endl
 								<<"Octal "<<toOctal(result)<<endl
-								<<"Decimal"<<result<<endl;
+								<<"Decimal "<<result<<endl;
 						}
 							break;
 					}//switch()2
@@ -225,6 +226,13 @@ string toOctal(int n){
     string result;
    	stringstream ss;
     ss << std::oct << n;
+    ss >> result;
+    return result;
+}
+string toHex(int n){
+    string result;
+   	stringstream ss;
+    ss << std::hex << n;
     ss >> result;
     return result;
 }
