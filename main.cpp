@@ -198,7 +198,21 @@ int Menu(){
 
 }//Menu()
 
-
+int MenuO(){
+	int opcion = 0;
+	while(opcion == 0){
+		cout<<"Ingrese Opcion :"<<endl
+			<<"1. Suma"<<endl
+			<<"2. Resta"<<endl
+			<<"3. Multiplicacion"<<endl
+			<<"4. Salir"<<endl;
+		cin>>opcion;
+		if(opcion < 1 || opcion > 4){
+			cout<<"Valor Incorecto"<<endl;
+			opcion = 0;
+		}//if()
+	}//while()
+}//MenuO()
 
 string toBinary(int n){
    	string r;
