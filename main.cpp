@@ -22,8 +22,13 @@ int main(){
 				cout<<"Ingrese Numero: ";
 				cin>>num;
 				if (num[num.size()-1] == 'b'){
-					Binario numero(num);
-					numeros.push_back(numero);
+					Binario* b = new Binario();
+					if (b->Validacion(num) == false){
+						Binario numero(num);
+						numeros.push_back(numero);
+					}else{
+						cout<<"Numero No es Binario"<<endl;
+					}
 				}else if (num[0] == '0' && (num[1] == 'c' || num[1] == 'C')){
 					//Octal numero(num);
 					//numeros.push_back(numero);
@@ -40,7 +45,16 @@ int main(){
 				do{
 					switch(OpcionOperador = MenuO()){
 						case 1:{
+							int pos1, pos2, num1, num2;
+							cout<<"Ingrese Numero 1: ";
+							cin>>pos1;
+							cout<<endl;
+							cout<<"Ingrese Numero 2: ";
+							cin>>pos2;
 
+							if (numeros.at(pos1) ){
+								
+							}
 						}
 							break;
 

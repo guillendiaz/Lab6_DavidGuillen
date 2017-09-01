@@ -5,13 +5,15 @@
 using namespace std;
 
 class Numero{
-    private:
+    protected:
         string numero;
     public:
-        Numero(string);
         Numero();
+        Numero(string);
         string getNumero();
         void setNumero(string);
-
+        virtual bool Validacion(string);
+        virtual int Convertir(string);
+        virtual ~Numero();
 };
 #endif
