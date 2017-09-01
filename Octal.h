@@ -1,9 +1,15 @@
 #ifndef OCTAL_H
 #define OCTAL_H
+#include <string>
+#include "Numero.h"
+using namespace std;
+
 class Octal : public Numero{
-    protected:
     public:
         Octal();
-        Octal();
+        Octal(string);
+        bool Validacion(string);
+        int Convertir(string);
+        ~Octal();
 };
 #endif

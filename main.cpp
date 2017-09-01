@@ -5,7 +5,7 @@
 #include "Numero.h"
 #include "Binario.h"
 #include "Hexadecimal.h"
-//#include "Octal.h"
+#include "Octal.h"
 //#include "Decimal.h"
 using namespace std;
 
