@@ -1,9 +1,10 @@
 #include <iostream>
+#include <typeinfo>
 #include <string>
 #include <vector>
 #include "Numero.h"
 #include "Binario.h"
-//#include "Hexadecimal.h"
+#include "Hexadecimal.h"
 //#include "Octal.h"
 //#include "Decimal.h"
 using namespace std;
@@ -22,19 +23,28 @@ int main(){
 				cout<<"Ingrese Numero: ";
 				cin>>num;
 				if (num[num.size()-1] == 'b'){
-					Binario* b = new Binario();
-					if (b->Validacion(num) == false){
-						Binario numero(num);
-						numeros.push_back(numero);
+					Binario* b = new Binario(num);
+					if (b->Validacion(b->getNumero()) == false){
+						numeros.push_back(*b);
 					}else{
 						cout<<"Numero No es Binario"<<endl;
 					}
 				}else if (num[0] == '0' && (num[1] == 'c' || num[1] == 'C')){
+					Octal* b = new Octal(num);
+					if (b->Validacion(b->getNumero()) == false){
+						numeros.push_back(*b);
+					}else{
+						cout<<"Numero No es Octal"<<endl;
+					}
 					//Octal numero(num);
 					//numeros.push_back(numero);
 				}else if (num[0] == '0' && (num[1] == 'x' || num[1] == 'X')){
-					//Hexadecimal numero(num);
-					//numeros.push_back(numero);
+					Hexadecimal* b = new Hexadecimal(num);
+					if (b->Validacion(b->getNumero()) == false){
+						numeros.push_back(*b);
+					}else{
+						cout<<"Numero No es Hexadecimal"<<endl;
+					}
 				}else{
 
 				}//if/else
@@ -51,9 +61,9 @@ int main(){
 							cout<<endl;
 							cout<<"Ingrese Numero 2: ";
 							cin>>pos2;
-
-							if (numeros.at(pos1) ){
-								
+							cout<<typeid(numeros.at(pos1)).name()<<endl;
+							if (typeid(numeros.at(pos1)).name() == "Numero"){
+								cout<<"Es Binario"<<endl;
 							}
 						}
 							break;

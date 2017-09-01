@@ -12,7 +12,7 @@ Binario::Binario(string PNumero){
 }
 
 bool Binario::Validacion(string numero){
-	numero.erase(numero.size()-1);
+	this->numero.erase(numero.size()-1);
 	for (int i = 0; i < numero.size()-1; ++i){
 		if (numero[i] != '1' || numero[i] != '0'){
 			return false;
