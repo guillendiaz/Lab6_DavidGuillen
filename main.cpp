@@ -1,5 +1,6 @@
 #include <iostream>
 #include <typeinfo>
+#include <sstream>
 #include <string>
 #include <vector>
 #include "Numero.h"
